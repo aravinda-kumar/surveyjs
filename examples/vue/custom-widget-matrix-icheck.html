@@ -623,7 +623,7 @@ Vue.component(widget.name, {
         <tr v-for="(row, rowIndex) in question.visibleRows">
             <td v-show="question.hasRows">{{ row.text}}</td>
             <td v-for="(column, columnIndex) in question.columns">
-                <input type="radio" :name="row.fullName" v-model="row.value" :value="column.value" :disabled="!isEditMode" :id="(columnIndex === 0) && (rowIndex === 0) ? question.inputId : ''"/>
+                <input type="radio" :name="row.fullName" v-model="row.value" :value="column.value" :disabled="question.isReadOnly" :id="(columnIndex === 0) && (rowIndex === 0) ? question.inputId : ''"/>
             </td>
         </tr>
     </tbody>
@@ -716,7 +716,7 @@ Vue.component(widget.name, {
         &lt;tr v-for=&quot;(row, rowIndex) in question.visibleRows&quot;&gt;
             &lt;td v-show=&quot;question.hasRows&quot;&gt;{{ row.text}}&lt;/td&gt;
             &lt;td v-for=&quot;(column, columnIndex) in question.columns&quot;&gt;
-                &lt;input type=&quot;radio&quot; :name=&quot;row.fullName&quot; v-model=&quot;row.value&quot; :value=&quot;column.value&quot; :disabled=&quot;!isEditMode&quot; :id=&quot;(columnIndex === 0) &amp;&amp; (rowIndex === 0) ? question.inputId : &#39;&#39;&quot;/&gt;
+                &lt;input type=&quot;radio&quot; :name=&quot;row.fullName&quot; v-model=&quot;row.value&quot; :value=&quot;column.value&quot; :disabled=&quot;question.isReadOnly&quot; :id=&quot;(columnIndex === 0) &amp;&amp; (rowIndex === 0) ? question.inputId : &#39;&#39;&quot;/&gt;
             &lt;/td&gt;
         &lt;/tr&gt;
     &lt;/tbody&gt;
